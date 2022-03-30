@@ -25,15 +25,9 @@ body{
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    display: flex;
 }
-/* .col-lg-12{
-   -webkit-box-flex: 0 ;
-   flex: 0 0 100%;
-   max-width: 100%;
-}
-.top .icon .top .icons {
-    margin: 0;
-} */
+
 .float-left {
     float: left!important;
 }
@@ -263,14 +257,272 @@ header #logo img {
 .organic img {
     margin: 25px 0 0;
 }
-.img-fluid {
-    max-width: 100%;
-    height: auto;
+
+
+.organic .commontop h4{
+    margin: 0 0 20px;
 }
-img {
-    vertical-align: middle;
-    border-style: none;
+.commontop h4 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #17161f;
+    text-transform: uppercase;
 }
+
+.commontop h4 i {
+    font-size: 20px;
+    color: #FF9900;
+    margin-right: 0px;
+}
+.chooseus {
+    margin: 0 0 100px;
+}
+
+
+
+
+
+.chooseus.commontop p{
+    font-size: 12px;
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+    color: #222;
+    text-transform: capitalize;
+
+}
+.chooseus .box ul {
+    margin: 0;
+    width: 50%;
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.chooseus .box ul li:first-child {
+    margin-left: 200px;
+}
+.chooseus .box ul li {
+    padding: 0 0 90px;
+    width: 66%;
+}
+.chooseus .box ul li img {
+    float: left;
+    margin: 10px 30px 0 0;
+}
+.commontop h4 i:nth-child(3) {
+    margin-right: 20px;
+}
+.commontop h4 i {
+    font-size: 20px;
+    color: #FF9900;
+    margin-right: 0px
+}
+
+.chooseus .box ul li h3 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    margin: 0 0 20px;
+}
+.chooseus .box ul li {
+    padding: 0 0 90px;
+    width: 66%;
+}
+.chooseus .box ul li p {
+    font-size: 13px;
+    color: #686868;
+    margin: 0;
+    font-weight: 400;
+}
+.chooseus .box ul li:nth-child(2) {
+    margin-left: 100px;
+}
+
+
+.chooseus .box ul li:last-child {
+    padding: 0;
+}
+.chooseus .box ul li {
+    width: 66%;
+}
+.team.back {
+    background: #f7f7f7;
+}
+.team .commontop h4 {
+    margin: 0 0 20px;
+}
+.commontop h4 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #17161f;
+    text-transform: uppercase;
+}
+.team .commontop p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    color: #222;
+    text-transform: capitalize;
+}
+
+.team .box {
+    margin-bottom: 80px;
+    text-align: center;
+}
+.team .box img {
+    margin: 0 auto 30px;
+}
+.team .box h3 {
+    font-size: 18px;
+    color: #363636;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+.team .box p {
+    font-size: 16px;
+    color: #666;
+    margin: -5px -5px 9px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background: #17161f;
+    padding: 45px 0 0;
+}
+
+footer p {
+    font-size: 14px;
+    color: #eee;
+    margin: 25px 0;
+    line-height: 24px;
+}
+footer ul {
+    margin: 0;
+}
+footer .contact li {
+    padding: 0 0 14px;
+}
+footer li {
+    font-size: 14px;
+    color: #eee;
+}
+footer li a {
+    font-size: 14px;
+    color: #eee;
+}
+footer #newsletter {
+    margin: 35px 0;
+}
+footer #newsletter .form-group {
+    margin: 0;
+}
+ooter #newsletter .input-group {
+    width: 100%;
+}
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+footer li a:hover {
+    color: #FF9900;
+}
+/* .col-lg-4 {
+    -webkit-box-flex: 0;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+} */
+/* footer #newsletter .input-group input {
+    width: 54%;
+    height: 39px;
+    font-size: 14px;
+    border: 1px solid #424146;
+    border-radius: 40px;
+    padding: 8px 15px;
+    color: #424146;
+    background: #121117;
+} */
+
+footer h5 {
+    color: #FF9900;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+
+footer #newsletter .news {
+    float: left;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: italic;
+    color: #FF9900;
+    text-transform: uppercase;
+    margin: 5px 20px 0 0;
+}
+
+
+
+
+
+
+
+
+footer .powered {
+    background: #121117;
+    margin: 40px 0 0;
+    padding: 18px 0 17px;
+}
+footer .powered p {
+    margin: 4px 0 0;
+}
+footer p {
+    font-size: 14px;
+    color: #eee;
+    line-height: 24px;
+}
+ooter .powered p span {
+    color: #FF9900;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* .header3 .top .icon li a, .header3 .top .icons li a {

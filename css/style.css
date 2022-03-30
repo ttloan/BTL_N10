@@ -40,12 +40,7 @@ body{
     padding-left: 0;
     list-style: none;
 }
-/* .header3 .top .icon li:first-child, .header3 .top .icons li:first-child {
-    border-left: none;
-}
- .header3 .top .icon li:first-child {
-    padding-left: 0;
-} */
+
 .header3 .top .icon li, .header3 .top .icons li {
     border-right: 1px solid #D7D7D7;
     padding: 15px 25px;
