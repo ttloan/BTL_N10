@@ -282,3 +282,58 @@ header #logo img {
     font-weight: 400;
     border-radius: 50%;
 }
+footer {
+    background: #17161f;
+    padding: 45px 0 0;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+footer p {
+    font-size: 14px;
+    color: #eee;
+    margin: 25px 0;
+    line-height: 24px;
+}
+footer ul {
+    margin: 0;
+}
+footer .contact li {
+    padding: 0 0 14px;
+    font-size: 14px;
+    color: #eee;
+}
+footer .contact li a i {
+    color: #FF9900;
+    margin-right: 1px;
+}
+footer #newsletter {
+    margin: 35px 0;
+}
+footer #newsletter .form-group {
+    margin: 0;
+}
+footer #newsletter .input-group {
+    width: 100%;
+}
+footer #newsletter .news {
+    float: left;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: italic;
+    color: #FF9900;
+    text-transform: uppercase;
+    margin: 5px 20px 0 0;
+}
+footer h5 {
+    color: #FF9900;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+}
+footer li a, footer li {
+    font-size: 14px;
+    color: #eee;
+}
