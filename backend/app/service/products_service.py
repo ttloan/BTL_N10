@@ -8,6 +8,7 @@ PRODUCT_COLUMNS = ["Name", "OldPrice", "Price", "TypeId", "Vote", "Image", "Deal
                    "BigImage1", "BigImage2", "SmallImage1", "SmallImage2", "Description",
                    "NotChemical", "Organic", "FromFarm",  "Deal", "FreeShip", "BestSell", "Feature"]
 
+
 def get_all_product():
     cnn = None
     ok = True
@@ -93,3 +94,5 @@ def add_product(product):
 def convert_product_to_list(product):
     result = [product[key] for key in PRODUCT_COLUMNS if key in product]
     return result
+
+

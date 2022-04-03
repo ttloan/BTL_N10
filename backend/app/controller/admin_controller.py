@@ -3,6 +3,7 @@ import json
 from flask_restplus import Resource, Namespace, abort
 from flask import Response, request
 from app.service.products_service import *
+from app.service.categories_service import *
 
 api = Namespace('product', description='admin manage products api')
 
@@ -44,6 +45,16 @@ class Product(Resource):
         if not ok:
             abort(500, message=result)
         return Response(json.dumps({'message': 'insert success!!!'}), mimetype='application/json')
+
+
+@api.route('/category')
+class Category(Resource):
+    @api.doc('get one or more category')
+    def get(self):
+        ok, result = get_all_category()
+        if not ok:
+            abort(500, result)
+        return Response(result.to_json(orient='records'), mimetype='application/json')
 
 
 def validate_product(params):

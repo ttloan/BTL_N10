@@ -1,7 +1,7 @@
 import json
 
 from flask_restplus import Resource, Namespace, abort
-from flask import Response, request, render_template
+from flask import Response, request, render_template, make_response
 from app.service.products_service import *
 
 api = Namespace('page', description='admin manage products api')
@@ -12,14 +12,32 @@ api = Namespace('page', description='admin manage products api')
 class Index(Resource):
     @api.doc('get one or more products')
     def get(self):
-        return render_template('index.html')
+        headers = {'Content-Type': 'text/html'}
+        ok, result = get_all_product()
+        if not ok:
+            abort(500, result)
+        products = result.to_dict(orient='records')
+        return make_response(render_template('index.html', products=products), 200, headers)
 
 
 @api.route('/detail')
 class Detail(Resource):
     @api.doc('get one or more products')
     def get(self):
-        pass
+        headers = {'Content-Type': 'text/html'}
+        params = request.args
+        if 'id' not in params:
+            abort(400, "product id is not valid.!!!")
+        ok, result = get_one_product(params.get('id'))
+        product = []
+        if not ok:
+            abort(500, result)
+        products = result.to_dict(orient='records')
+        if len(products) != 1:
+            abort(500, "product is not existed or not valid!!!")
+        else:
+            product = products[0]
+        return make_response(render_template('detail.html', product=product), 200, headers)
 
 
 @api.route('/new')
