@@ -9,3 +9,5 @@ requests~=2.22.0
 setuptools~=44.0.0
 Jinja2==3.0.3
 itsdangerous==2.0.1
+Flask-WTF==1.0.1
+uuid==1.30

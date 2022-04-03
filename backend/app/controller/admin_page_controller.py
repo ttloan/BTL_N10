@@ -1,7 +1,7 @@
 import json
 
 from flask_restplus import Resource, Namespace, abort
-from flask import Response, request
+from flask import Response, request, render_template
 from app.service.products_service import *
 
 api = Namespace('page', description='admin manage products api')
@@ -12,7 +12,7 @@ api = Namespace('page', description='admin manage products api')
 class Index(Resource):
     @api.doc('get one or more products')
     def get(self):
-        return 'Hello index!'
+        return render_template('index.html')
 
 
 @api.route('/detail')
