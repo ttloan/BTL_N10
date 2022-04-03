@@ -1,8 +1,7 @@
-import json
-
 from flask_restplus import Resource, Namespace, abort
-from flask import Response, request, render_template, make_response
+from flask import request, render_template, make_response
 from app.service.products_service import *
+from app.view.product import ProductForm
 
 api = Namespace('page', description='admin manage products api')
 
@@ -44,4 +43,17 @@ class Detail(Resource):
 class AddNew(Resource):
     @api.doc('get one or more products')
     def get(self):
-        pass
+        form, rp = generate_product_from()
+        return rp
+
+    @api.doc('get one or more products')
+    def post(self):
+        form, rp = generate_product_from()
+        data = form.data
+        return rp
+
+
+def generate_product_from():
+    headers = {'Content-Type': 'text/html'}
+    form = ProductForm(meta={'csrf': False})
+    return form, make_response(render_template('new.html', form=form), 200, headers)

@@ -4,104 +4,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New</title>
-    <style>
-        table {
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-        }
-        
-        td, th {
-          border: 1px solid #dddddd;
-          text-align: left;
-          padding: 8px;
-        }
-        
-        tr:nth-child(even) {
-          background-color: #dddddd;
-        }
-        </style>
+    <title>New Product</title>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 <body>
-    <h1>Thêm mới sản phẩm</h1>
+<h1>Thêm mới sản phẩm</h1>
+<div class="buttons">
+    <button class="btn-primary" type="button" onclick="location.href='index'"><i class="icon_cart"></i>Back To Index</button>
+</div>
+<br/>
+<form method="POST" enctype="multipart/form-data" action="#">
     <table>
         <tr>
             <th>Name</th>
-            <th><input type="text" id="prod_name" name="prod_name"></th>
+            <th>{{ form.name(size=20) }}</th>
         </tr>
         <tr>
             <th>OldPrice</th>
-            <th><input type="text" id="old_price" name="old_price"></th>
+            <th>{{ form.old_price }}</th>
         </tr>
         <tr>
             <th>Price</th>
-            <th><input type="text" id="price" name="price"></th>
+            <th>{{ form.price }}</th>
         </tr>
         <tr>
             <th>TypeId</th>
-            <th><input type="text" id="type_id" name="type_id"></th>
+            <th>{{ form.type_id }}</th>
         </tr>
         <tr>
             <th>Vote</th>
-            <th><input type="text" id="vote" name="vote"></th>
+            <th>{{ form.vote(size=1) }}</th>
         </tr>
         <tr>
             <th>Image</th>
-            <th><button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button></th>
-          </tr>
-          <tr>
+            <th>{{ form.image }}</th>
+        </tr>
+        <tr>
             <th>DealImage</th>
-            <th><button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button></th>
-          </tr>
-          <tr>
+            <th>
+                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
+            </th>
+        </tr>
+        <tr>
             <th>BigImage1</th>
-            <th><button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button></th>
-          </tr>
-          <tr>
+            <th>
+                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
+            </th>
+        </tr>
+        <tr>
             <th>BigImage2</th>
-            <th><button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button></th>
-          </tr>
-          <tr>
+            <th>
+                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
+            </th>
+        </tr>
+        <tr>
             <th>SmallImage1</th>
-            <th><button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button></th>
-          </tr>
-          <tr>
+            <th>
+                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
+            </th>
+        </tr>
+        <tr>
             <th>SmallImage2</th>
-            <th><button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button></th>
-          </tr>
-          <tr>
+            <th>
+                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
+            </th>
+        </tr>
+        <tr>
             <th>Description</th>
             <th><textarea id="desc" name="desc" rows="4" cols="50"></textarea>
             </th>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <th>NotChemical</th>
             <th><input type="checkbox" id="chem" name="chem"></th>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <th>Organic</th>
             <th><input type="checkbox" id="org" name="org"></th>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <th>FromFarm</th>
             <th><input type="checkbox" id="farm" name="farm"></th>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <th>Deal</th>
             <th><input type="checkbox" id="deal" name="deal"></th>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <th>FreeShip</th>
             <th><input type="checkbox" id="ship" name="ship"></th>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <th>BestSell</th>
             <th><input type="checkbox" id="sell" name="sell"></th>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <th>Feature</th>
             <th><input type="checkbox" id="fea" name="fea"></th>
-          </tr>
+        </tr>
+    </table>
+    <br/>
+    <div class="buttons">
+        <input type="submit" class="btn-primary" value="Create" />
+    </div>
+    <br/>
+    <br/>
+</form>
 </body>
 </html>

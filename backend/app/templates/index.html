@@ -20,14 +20,16 @@
                 }
             });
         }
+
     </script>
 </head>
 <body>
 <h1>Quản lý danh mục sản phẩm</h1>
 <h2> Bảng danh mục sản phẩm</h2>
 <div class="buttons">
-    <button class="btn-primary" type="button" onclick="location.href='new.html'"><i class="icon_cart"></i>New</button>
+    <button class="btn-primary" type="button" onclick="location.href='new'"><i class="icon_cart"></i>New Product</button>
 </div>
+<br/>
 <table>
     <tr>
         <th>Id</th>
@@ -41,7 +43,8 @@
         <td>{{item['Name']}}</td>
         <td><a href="detail?id={{item['Id']}}">Detail</a></td>
         <td>
-            <button class="btn-primary" type="button" value="{{item['Id']}}" onclick="del_prod(this.value)"><i class="icon_cart"></i>Delete
+            <button class="btn-primary" type="button" value="{{item['Id']}}" onclick="del_prod(this.value)"><i
+                    class="icon_cart"></i>Delete
             </button>
         </td>
     </tr>
