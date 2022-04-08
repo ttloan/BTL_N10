@@ -10,7 +10,7 @@ body {
   display: block;
 }
 a{
-	text-decoration: none;
+  text-decoration: none;
 }
 .top {
   background-color: #17161f;
@@ -32,6 +32,8 @@ a{
 .float-left {
   float: left !important;
 }
+.float-right {
+  float: right!important;}
 a:hover {
   text-decoration: none;
 }

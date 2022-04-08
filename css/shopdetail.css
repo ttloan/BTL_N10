@@ -1,54 +1,31 @@
 /*------------------------------------------------------------------
-[Table of contents]
 
-[ Body ]
-[ top / top ]
-[ Header / header ]
-[ Slideshow / .slideshow ]
-[ commontop / .commontop ]
-[ nav-tabs / .nav-tabs ]
-[ product-thumb / .product-thumb ]
-[ season / .season ]
-[ deals / .deals ]
-[ vegetable / .vegetable ]
-[ testimonail / .testimonail ]
-[ blog / .blog ]
-[ shipping / .shipping ]
-[ footer / .footer ]
-[ header2 / .header2 ]
-[ header3 / .header3 ]
-[ header4 / .header4 ]
-[ bread-crumb / .bread-crumb ]
-[ organic / .organic ]
-[ abouttesti / .abouttesti ]
-[ chooseus / .chooseus ]
-[ team / .team ]
-[ sort / .sort ]
-[ leftside / .leftside ]
-[ pagination / .pagination ]
-[ shopdetail / .shopdetail ]
-[ gallery / .gallery ]
-[ maintest / .maintest ]
-[ faq / .faq ]
-[ timer / .timer ]
-[ error / .error ]
-[ mainblog / .mainblog / .blog-detail]
-[ leave / .leave ]
-[ contactus / .contactus ]
-[ register / .register ]
-[ Mycart / .mycart ]
-[ checkout / .checkout ]
-[ confirm / .confirm ]
-[responsive]
--------------------------------------------------------------------*/
-
-/*----------
-[ Body ]
 -------------*/
 body{
 	font-family: 'Fira Sans', sans-serif;
 	font-weight:400;
 }
+a{
+    text-decoration: none;
+}
+.container {
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .row {
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    box-sizing: border-box;
+  }
+  .float-left  {
+    float: left!important;}
+  .float-right {
+    float: right!important;}
 a:hover{
 	text-decoration:none;
 }
@@ -6198,16 +6175,6 @@ footer .powered li{
 .mainbox li{
 	padding-right:5px;
 }
-a{
-	text-decoration: none;
-}
-.float-left{
-	float: left !important;
-}
-.float-right{
-	float: right !important;
-}
-
 
 .icon-bar {
   position: fixed;
