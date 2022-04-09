@@ -42,13 +42,9 @@ body{
 .top .icon li i, .top .icons li i {
     margin-right: 7px;
 }
-/* .header3 .top .icon li:first-child, .header3 .top .icons li:first-child {
-    border-left: none;
+a{
+    text-decoration: none;
 }
-.header3 .top .icon li:first-child {
-    padding-left: 0;
-} */
-
 .top .icon li:first-child {
     padding-left: 0px;
 }

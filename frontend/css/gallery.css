@@ -38,6 +38,9 @@
     color: #fff;
     font-size: 13px;
 }
+a{
+    text-decoration: none;
+}
 .top .icon li i, .top .icons li i {
     margin-right: 7px;
 }
