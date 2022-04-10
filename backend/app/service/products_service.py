@@ -19,8 +19,12 @@ def get_one_product(product_id):
     return product_manager.get_one_product(product_id)
 
 
-def get_product_by_type(product_type):
-    return product_manager.get_product_by_type(product_type)
+def get_product_by_type(product_type, size):
+    return product_manager.get_product_by_type(product_type, size)
+
+
+def get_latest_product(size):
+    return product_manager.get_latest_product(size)
 
 
 def del_product_by_id(product_id):

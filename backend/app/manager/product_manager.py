@@ -43,14 +43,31 @@ def get_one_product(product_id):
     return ok, result
 
 
-def get_product_by_type(product_type):
+def get_product_by_type(product_type, size):
     cnn = None
     ok = False
     result = None
     try:
         cnn = get_cnn()
-        sql = '''select * from Product where TypeId = ?'''
+        sql = '''select top %s * from Product where TypeId = ?''' % size
         result = exec_query(cnn, sql, [product_type])
+        ok = True
+    except Exception as inst:
+        if cnn:
+            cnn.close()
+        ok = False
+        result = inst
+    return ok, result
+
+
+def get_latest_product(size):
+    cnn = None
+    ok = False
+    result = None
+    try:
+        cnn = get_cnn()
+        sql = '''select top %s * from Product order by UpdateDate desc''' % size
+        result = exec_query(cnn, sql)
         ok = True
     except Exception as inst:
         if cnn:

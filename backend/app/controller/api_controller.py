@@ -16,12 +16,16 @@ class Product(Resource):
         if 'id' in params:
             ok, result = get_one_product(params.get('id'))
         elif 'type' in params:
-            ok, result = get_product_by_type(params.get('type'))
+            ok, result = get_product_by_type(params.get('type'), params.get('size'))
+        elif 'latest' in params:
+            ok, result = get_latest_product(params.get('size'))
         else:
             ok, result = get_all_product()
         if not ok:
             abort(500, result)
-        return Response(result.to_json(orient='records'), mimetype='application/json')
+        data = result.to_json(orient='records')
+        data = "%s(%s)" % (params['callback'], data) if 'callback' in params else data
+        return Response(data, mimetype='application/json')
 
     @api.doc('delete one product')
     def delete(self):
