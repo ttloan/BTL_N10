@@ -10,7 +10,7 @@
     <script>
         function del_prod(product_id) {
             $.ajax({
-                url: '../admin/product',
+                url: '../api/product',
                 type: 'DELETE',
                 data: JSON.stringify({id: product_id}),
                 contentType: "application/json; charset=utf-8",

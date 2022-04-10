@@ -45,6 +45,7 @@ body{
 a{
     text-decoration: none;
 }
+
 .top .icon li:first-child {
     padding-left: 0px;
 }
@@ -63,6 +64,91 @@ a{
 }
 .top .icons li:first-child {
     border-left: 1px solid #383838;
+}
+.top .icons .cart .dropdown-menu table {
+    margin: 0;
+}
+.top .icons .dropdown-menu .table td {
+    padding: 8px;
+}
+.top .icons .cart .dropdown-menu td img {
+    border: 1px solid #E3E3E3;
+    width: 80px;
+    height: 70px;
+}
+.top .icons .cart .dropdown-menu td a, .top .icons .cart .dropdown-menu td p {
+    color: #17161f;
+}
+.top .icons .cart .dropdown-menu .btn-danger {
+    background-color: #878787;
+    border-color: #878787;
+    border-radius: 50%;
+    padding: 2px 4px 1px;
+}
+
+.top .icons .cart .dropdown-menu .btn-danger i {
+    margin-right: 0;
+}
+.top .icons .cart .dropdown-menu .buttons {
+    background: #17161f;
+    padding: 12px 15px;
+}
+.top .icons .cart .dropdown-menu .btn-primary {
+    color: #fff;
+    text-align: center;
+    padding: 6px 11px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.top .icon li i, .top .icons li i {
+    margin-right: 7px;
+}
+.top .icons .cart .dropdown-menu .btn-primary + .btn-primary {
+    margin-left: 15px;
+}
+.top .icon li a, .top .icons li a {
+    color: #fff;
+    font-size: 13px;
+}
+top .icons .login .dropdown-menu .fac {
+    background: #4867AA;
+}
+.top .icons .login .dropdown-menu .fac, .top .icons .login .dropdown-menu .go {
+    height: 32px;
+    color: #fff;
+    border: 0;
+    border-radius: 40px;
+    margin: 0 8px 0 0;
+    width: 45.5%;
+    text-transform: uppercase;
+}
+.top .icons .login .dropdown-menu .go {
+    background: #DC4437;
+}
+.top .icons .login .dropdown-menu li a {
+    color: #17161f;
+    padding: 0;
+}
+.top .icons .login .dropdown-menu .des {
+    font-size: 12px;
+    color: #999;
+    padding: 10px 0 0;
+}
+.top .icons .login .dropdown-menu li:nth-child(6) a {
+    font-weight: 500;
+}
+.top .icons .login .dropdown-menu .btn {
+    color: #fff;
+    border: 0;
+    width: 100%;
+    border-radius: 40px;
+    padding: 14px 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+    background: #FF9900;
 }
 .dropdown{
     position: relative;
@@ -88,12 +174,6 @@ header #logo img {
 }
 
 
-
-/* .col-lg-11 {
-    -webkit-box-flex: 0;
-    flex: 0 0 91.666667%;
-    max-width: 91.666667%;
-} */
 #menu {
     margin: 18px 0 0;
 }
@@ -106,13 +186,6 @@ header #logo img {
     border: 0px solid transparent;
 }
 
-/* .navbar-expand-sm {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-flow: row nowrap;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-} */
 .navbar {
     position: relative;
     display: flex;

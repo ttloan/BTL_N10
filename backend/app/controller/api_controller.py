@@ -5,7 +5,7 @@ from flask import Response, request
 from app.service.products_service import *
 from app.service.categories_service import *
 
-api = Namespace('product', description='admin manage products api')
+api = Namespace('api', description='admin manage products api')
 
 
 @api.route('/product')
@@ -40,7 +40,6 @@ class Product(Resource):
     def post(self):
         params = request.json
         product = validate_product(params)
-        ok = False
         ok, result = add_product(product)
         if not ok:
             abort(500, message=result)
@@ -58,7 +57,7 @@ class Category(Resource):
 
 
 def validate_product(params):
-    result = convert_product_to_list(params)
-    if len(result) != len(PRODUCT_COLUMNS):
+    result = convert_product_to_model(params)
+    if len(result) != len(product_manager.PRODUCT_FIELDS):
         abort(400, message="invalid params")
     return result

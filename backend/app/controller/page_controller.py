@@ -1,7 +1,7 @@
-from flask_restplus import Resource, Namespace, abort
-from flask import request, render_template, make_response
+from flask_restplus import Resource, Namespace
+from flask import request, render_template, make_response, abort, flash
 from app.service.products_service import *
-from app.view.product import ProductForm
+from app.views.product import ProductForm
 
 api = Namespace('page', description='admin manage products api')
 
@@ -43,17 +43,29 @@ class Detail(Resource):
 class AddNew(Resource):
     @api.doc('get one or more products')
     def get(self):
-        form, rp = generate_product_from()
-        return rp
+        headers = {'Content-Type': 'text/html'}
+        form = ProductForm(meta={'csrf': False})
+        return make_response(render_template('new.html', form=form), 200, headers)
 
     @api.doc('get one or more products')
     def post(self):
-        form, rp = generate_product_from()
+        headers = {'Content-Type': 'text/html'}
+        form = ProductForm(meta={'csrf': False})
+        message = {}
+
         data = form.data
-        return rp
+        product = convert_form_data_to_product(data)
+        ok, error = add_product(product)
+
+        if not ok:
+            message['error'] = "error when adding a new product %s" % error
+        else:
+            message['info'] = "add new product success"
+        return make_response(render_template('new.html', form=form, message=message), 200, headers)
 
 
 def generate_product_from():
     headers = {'Content-Type': 'text/html'}
     form = ProductForm(meta={'csrf': False})
+    form.info.text = ''
     return form, make_response(render_template('new.html', form=form), 200, headers)

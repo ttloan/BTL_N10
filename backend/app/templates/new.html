@@ -14,7 +14,15 @@
     <button class="btn-primary" type="button" onclick="location.href='index'"><i class="icon_cart"></i>Back To Index</button>
 </div>
 <br/>
-<form method="POST" enctype="multipart/form-data" action="#">
+
+{% if "error" in message %}
+    <script>alert('{{ message['error'] }}')</script>
+{% elif "info" in message %}
+    <script>alert('{{ message['info']}}')</script>
+{% endif %}
+
+
+<form id="addNewForm" method="POST" enctype="multipart/form-data" action="#">
     <table>
         <tr>
             <th>Name</th>
@@ -42,72 +50,63 @@
         </tr>
         <tr>
             <th>DealImage</th>
-            <th>
-                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
-            </th>
+            <th>{{ form.deal_image }}</th>
         </tr>
         <tr>
             <th>BigImage1</th>
-            <th>
-                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
-            </th>
+            <th>{{ form.big_image_1 }}</th>
         </tr>
         <tr>
             <th>BigImage2</th>
-            <th>
-                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
-            </th>
+            <th>{{ form.big_image_2 }}</th>
         </tr>
         <tr>
             <th>SmallImage1</th>
-            <th>
-                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
-            </th>
+            <th>{{ form.small_image_1 }}</th>
         </tr>
         <tr>
             <th>SmallImage2</th>
-            <th>
-                <button class="btn-primary" type="button"><i class="icon_cart"></i>UpImage</button>
-            </th>
+            <th>{{ form.small_image_2 }}</th>
         </tr>
         <tr>
             <th>Description</th>
-            <th><textarea id="desc" name="desc" rows="4" cols="50"></textarea>
-            </th>
+            <th>{{ form.description(rows=4, cols=50) }}</th>
         </tr>
         <tr>
             <th>NotChemical</th>
-            <th><input type="checkbox" id="chem" name="chem"></th>
+            <th>{{ form.chemical }}</th>
         </tr>
         <tr>
             <th>Organic</th>
-            <th><input type="checkbox" id="org" name="org"></th>
+            <th>{{ form.organic }}</th>
         </tr>
         <tr>
             <th>FromFarm</th>
-            <th><input type="checkbox" id="farm" name="farm"></th>
+            <th>{{ form.from_farm }}</th>
         </tr>
         <tr>
             <th>Deal</th>
-            <th><input type="checkbox" id="deal" name="deal"></th>
+            <th>{{ form.deal }}</th>
         </tr>
         <tr>
             <th>FreeShip</th>
-            <th><input type="checkbox" id="ship" name="ship"></th>
+            <th>{{ form.free_ship }}</th>
         </tr>
         <tr>
             <th>BestSell</th>
-            <th><input type="checkbox" id="sell" name="sell"></th>
+            <th>{{ form.sell }}</th>
         </tr>
         <tr>
             <th>Feature</th>
-            <th><input type="checkbox" id="fea" name="fea"></th>
+            <th>{{ form.feature }}</th>
         </tr>
     </table>
     <br/>
     <div class="buttons">
         <input type="submit" class="btn-primary" value="Create" />
+        <input type="reset"  class="btn-primary" value="Refresh">
     </div>
+
     <br/>
     <br/>
 </form>
