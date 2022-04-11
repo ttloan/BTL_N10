@@ -19,6 +19,8 @@ class Product(Resource):
             ok, result = get_product_by_type(params.get('type'), params.get('size'))
         elif 'latest' in params:
             ok, result = get_latest_product(params.get('size'))
+        elif 'deal' in params:
+            ok, result = get_deal_product(params.get('size'))
         else:
             ok, result = get_all_product()
         if not ok:

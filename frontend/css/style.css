@@ -1,16 +1,24 @@
 body{
 	font-family: 'Fira Sans', sans-serif;
 	font-weight:400;
-    margin: 0;
+    /* margin: 0;
     font-size: 1rem;
     line-height: 1.5;
     color: #212529;
     text-align: left;
     background-color: #fff;
-    display: block;
+    display: block; */
 }
+
+.top {
+	background:#17161f;
+}
+.top .icon, .top .icons {
+    margin: 0px;
+}
+
 .header3 .top {
-    background-color: #f7f7f7;
+    background: #f7f7f7;
 }
 .container {
     max-width: 1140px;
@@ -25,13 +33,7 @@ body{
     margin-left: -15px;
     box-sizing: border-box;
 }
-.top .icon .top .icons {
-    margin: 0;
-}
-.list-inline {
-    padding-left: 0;
-    list-style: none;
-}
+
 .float-left {
     float: left!important;
 }
@@ -443,11 +445,11 @@ header #srch button {
     position: relative;
     min-height: 200px;
 }
-.col-lg-12 {
+/* .col-lg-12 {
     -webkit-box-flex: 0;
     flex: 0 0 100%;
     max-width: 100%;
-}
+} */
 .header3 .about {
     box-shadow: 0px 2px 3px 3px rgb(225 225 225 / 20%);
     background: #fff;
@@ -480,12 +482,6 @@ header #srch button {
 .header3 .about a i {
     vertical-align: middle;
 }
-
-
-
-
-
-
 .header3 .product {
     margin: 88px 0 0;
 }
@@ -528,6 +524,9 @@ img {
     vertical-align: middle;
     border-style: none;
 }
+.header3 .product-thumb .caption .rating, .header4 .product-thumb .caption .rating {
+    display: block;
+}
 .header3 .product-thumb .image .onhover1 {
     right: 0;
     bottom: -18px;
@@ -552,13 +551,6 @@ img {
 }
 .header3 .product-thumb .image .onhover1 button i {
     font-size: 20px;
-}.header3 .product-thumb .caption {
-    padding: 40px 14px 0;
-    min-height: 118px;
-    border: none;
-}
-.product-thumb .caption {
-    border-radius: 0 0px 10px 10px;
 }
 .header3 .product-thumb .caption h4 {
     font-size: 14px;
@@ -569,8 +561,28 @@ img {
 .header3 .product-thumb .caption h4 a {
     color: #000;
 }
+.header3 .product-thumb .caption {
+    padding: 40px 14px 0;
+    min-height: 118px;
+    border: none;
+}
+.product-thumb .caption {
+    padding: 18px 14px;
+    border-radius: 0 0px 10px 10px;
+    border-top: 1px solid #ededed;
+    text-align: center;
+}
+.product-thumb .caption h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 10px;
+    -webkit-text-stroke: 0.2px;
+}
 .product-thumb .caption h4 a {
     text-transform: capitalize;
+}
+.product-thumb .caption .rating i{
+	margin-right:5px;
 }
 .header3 .product-thumb .caption .price {
     font-size: 14px;
@@ -652,6 +664,9 @@ img {
 }
 .header3 .mixveg {
    margin: 100px 0 50px; 
+}
+.header3 .featured .product-thumb1 {
+	margin: 0 0 50px;
 }
 .header3 .product-thumb1 .image{
     border: 1px solid #eee;

@@ -3,7 +3,48 @@ $(document).ready(function() {
     get_latest_products();
     get_products_by_type(1, '#fresh_products');
     get_products_by_type(2, '#fruits_products');
+    get_deal_products()
 });
+
+
+function get_deal_products() {
+    $.ajax({
+        url: 'http://localhost:6868/food-blog/api/product?deal=1&size=8',
+        crossDomain : true,
+        dataType : "jsonp",
+        type: 'GET',
+        jsonp: "callback",
+        contentType: "application/json; charset=utf-8",
+        success: function(data, state, res){
+            if (data == null) { return; };
+            var items = [];
+            $.each(data, function(index, item) {
+                items.push(reder_deal_products(item));
+            });
+            $('#deal_products').append(items.join(""));
+        }
+    });
+}
+
+
+function reder_deal_products(item) {
+    var htmlText = '<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">';
+    htmlText += '<div class="product-thumb1">';
+    htmlText += '<div class="image">';
+    htmlText += '<a href="shop.html">';
+    htmlText += '<img src="' + item['DealImage'] + '" alt="image" title="image" class="img-fluid">';
+    htmlText += '</a>';
+    htmlText += '</div>';
+    htmlText += '<div class="caption">';
+    htmlText += '<h4>' + item['Name'] + '</h4>';
+    htmlText += '<p>Price : <span>$' + item['Price'] + '</span></p>';
+    htmlText += '<div class="button-group">';
+    htmlText += '<button type="button"><i class="icon_cart_alt"></i></button>';
+    htmlText += '<button type="button"><i class="icon_heart_alt"></i></button>';
+    htmlText += '</div></div></div></div>';
+    return htmlText;
+}
+
 
 function get_products_by_type(t, target) {
     $.ajax({
@@ -25,7 +66,6 @@ function get_products_by_type(t, target) {
 }
 
 function reder_type_products(item, idx) {
-    console.log(item, idx);
     var htmlText = idx < 3 ? '<div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">' : '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">';
     htmlText += idx < 3 ? '<div class="product-thumb">' : '<div class="product-thumb1">';
     htmlText += '<div class="image">';
@@ -47,7 +87,7 @@ function reder_type_products(item, idx) {
     
     if (idx < 3) {
         htmlText += '<div class="rating">';
-        for (var i = 1; i < 5; i++) {
+        for (var i = 0; i < 5; i++) {
             htmlText += (i == item['Vote']) ? "<i class='fa fa-star-o'></i>" : "<i class='fa fa-star'></i>";
         }
         htmlText += '</div>';
@@ -97,7 +137,7 @@ function reder_latest_products(item) {
     htmlText += "<div class='caption text-center'>";
     htmlText += "<h4><a href='shop.html'>" + item['Name'] + "</a></h4>";
     htmlText += "<div class='rating'>";
-    for (var i = 1; i < 5; i++) {
+    for (var i = 0; i < 5; i++) {
         htmlText += (i == item['Vote']) ? "<i class='fa fa-star-o'></i>" : "<i class='fa fa-star'></i>";
     }
     htmlText += "</div>";

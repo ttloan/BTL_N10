@@ -27,6 +27,10 @@ def get_latest_product(size):
     return product_manager.get_latest_product(size)
 
 
+def get_deal_product(size):
+    return product_manager.get_deal_product(size)
+
+
 def del_product_by_id(product_id):
     return product_manager.del_product_by_id(product_id)
 

@@ -77,6 +77,23 @@ def get_latest_product(size):
     return ok, result
 
 
+def get_deal_product(size):
+    cnn = None
+    ok = False
+    result = None
+    try:
+        cnn = get_cnn()
+        sql = '''select top %s * from Product where deal =1 order by UpdateDate desc''' % size
+        result = exec_query(cnn, sql)
+        ok = True
+    except Exception as inst:
+        if cnn:
+            cnn.close()
+        ok = False
+        result = inst
+    return ok, result
+
+
 def del_product_by_id(product_id):
     cnn = None
     ok = False
