@@ -6,4 +6,4 @@ function generateColorforShop =()=>{
     color=`rgb(${r} ,${g} ,${b})`
     dropdown-toggle.style.color=color
 }
-setInterval(generateColorforShop,1000)
+setInterval(generateColorforShop,1000);

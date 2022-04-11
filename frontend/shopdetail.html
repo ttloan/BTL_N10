@@ -6,12 +6,13 @@
 <title>Shop Detail</title>
 <!-- Bootstrap stylesheet -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="css/ele-style.css" rel="stylesheet" type="text/css"/>
 <!-- stylesheet -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <link href="css/shopdetail.css" rel="stylesheet" type="text/css"/>
 
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <!--top start here -->
@@ -408,19 +409,13 @@
 				<div class="row">
 					<!--thumb image code start-->
 					<div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
-						<a class="thumbnail" href="#"><img src="images/big_product.png" title="img" alt="img" /></a>
+						<a id="big_image1" class="thumbnail" href="#"><img src="images/big_product.png" title="img" alt="img" /></a>
 						<ul class="thumbnails list-inline">
 							<li class="image-additional">
-								<a class="thumbnail" href="#"><img src="images/small_product1.png" title="img" alt="img" /></a>
+								<a id="small_image1" class="thumbnail" href="#"><img src="images/small_product1.png" title="img" alt="img" /></a>
 							</li>
 							<li class="image-additional">
-								<a class="thumbnail" href="#"><img src="images/small_product2.png" title="img" alt="img" /></a>
-							</li>
-							<li class="image-additional">
-								<a class="thumbnail" href="#"><img src="images/small_product3.png" title="img" alt="img" /></a>
-							</li>
-							<li class="image-additional">
-								<a class="thumbnail" href="#"><img src="images/small_product1.png" title="img" alt="img" /></a>
+								<a id="small_image2" class="thumbnail" href="#"><img src="images/small_product2.png" title="img" alt="img" /></a>
 							</li>
 						</ul>
 					</div>
@@ -428,27 +423,27 @@
 				
 					<!--Product detail code start-->
 					<div class="col-sm-8 col-md-8 col-lg-8 col-xs-12">
-						<h5>Organic <span>Onion</span></h5>
-						<div class="rating">
+						<h5>Organic <span id="product_name">Onion</span></h5>
+						<div id="rating" class="rating">
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
+							<i class="fa fa-star fa-star-l"></i>
 						</div>
-						<p class="shortdes">
+						<p id="shot_des" class="shortdes">
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolor.
 						</p>
 						<hr>
 						<h5>Product Features</h5>
 						<ul class="list-unstyled featured">
-							<li><i class="icon_box-checked"></i> 100% Fresh not Chemicals</li>
-							<li><i class="icon_box-checked"></i> 100% Organic food</li>
-							<li><i class="icon_box-checked"></i> 100% Fresh Food from farm</li>
+							<li id="is_chemicals"><i class="icon_box-checked"></i> 100% Fresh not Chemicals</li>
+							<li id="is_organic"><i class="icon_box-checked"></i> 100% Organic food</li>
+							<li id="is_from_fram"><i class="icon_box-checked"></i> 100% Fresh Food from farm</li>
 						</ul>
 						<hr>
-						<div class="price">
-							$55.00
+						<div id="price" class="price">
+							$00.00
 						</div>
 						<hr>
 						<div class="common">
@@ -934,6 +929,6 @@
 </footer>
 <!-- footer end here -->
 
-
+<script src="js/detail.js"></script>
 </body>
 </html>

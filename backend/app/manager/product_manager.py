@@ -9,13 +9,18 @@ PRODUCT_FIELDS = ["Name", "OldPrice", "Price", "TypeId", "Vote", "Image", "DealI
                   "NotChemical", "Organic", "FromFarm", "Deal", "FreeShip", "BestSell", "Feature"]
 
 
-def get_all_product():
+def get_all_product(offset, size):
     cnn = None
     ok = False
     result = None
     try:
         cnn = get_cnn()
-        sql = 'select * from Product'
+        if (offset is not None) and (size is not None):
+            sql = 'select * from Product order by Id OFFSET %s ROWS FETCH NEXT %s ROWS ONLY' % (offset,
+                                                                                                size)
+        else:
+            sql = 'select * from Product order by Id'
+        print(sql)
         result = exec_query(cnn, sql)
         ok = True
     except Exception as inst:
@@ -125,3 +130,21 @@ def add_product(product):
             cnn.close()
         error = inst
     return ok, error
+
+
+def count():
+    cnn = None
+    ok = False
+    result = None
+    try:
+        cnn = get_cnn()
+        sql = '''select count(*) as c from Product'''
+        result = exec_query(cnn, sql)
+        result = int(result.iloc[0]['c'])
+        ok = True
+    except Exception as inst:
+        if cnn:
+            cnn.close()
+        ok = False
+        result = inst
+    return ok, result

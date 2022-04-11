@@ -21,8 +21,15 @@ class Product(Resource):
             ok, result = get_latest_product(params.get('size'))
         elif 'deal' in params:
             ok, result = get_deal_product(params.get('size'))
+        elif 'count' in params:
+            ok, result = count()
+            data = json.dumps({'count': result})
+            data = "%s(%s)" % (params['callback'], data) if 'callback' in params else data
+            return Response(data, mimetype='application/json')
         else:
-            ok, result = get_all_product()
+            size = params.get('size') if 'size' in params else None
+            page = params.get('page') if 'page' in params else None
+            ok, result = get_all_product(size, page)
         if not ok:
             abort(500, result)
         data = result.to_json(orient='records')

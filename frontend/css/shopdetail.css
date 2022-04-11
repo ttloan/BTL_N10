@@ -3464,12 +3464,12 @@ footer .powered li{
 .shopdetail h5 span{
 	font-weight:700;
 }
-.shopdetail .rating i{
+.shopdetail .rating {
 	font-size:16px;
 	color:#FF9900;
 	margin-right:5px;
 }
-.shopdetail .rating i:last-child{
+.shopdetail .rating .fa-star-l{
 	color:#686868;
 }
 .shopdetail .shortdes{

@@ -11,8 +11,13 @@ MAPPING_PRODUCT_FIELDS = {"Name": "name", "OldPrice": "old_price", "Price": "pri
                           "Feature": "feature"}
 
 
-def get_all_product():
-    return product_manager.get_all_product()
+def count():
+    return product_manager.count()
+
+
+def get_all_product(size=None, page=None):
+    offset = int(size) * int(page) if size else 0
+    return product_manager.get_all_product(offset, size)
 
 
 def get_one_product(product_id):

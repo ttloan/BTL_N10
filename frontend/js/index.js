@@ -21,7 +21,7 @@ function get_deal_products() {
             $.each(data, function(index, item) {
                 items.push(reder_deal_products(item));
             });
-            $('#deal_products').append(items.join(""));
+            $('#deal_products').empty().append(items.join(""));
         }
     });
 }
@@ -31,8 +31,8 @@ function reder_deal_products(item) {
     var htmlText = '<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">';
     htmlText += '<div class="product-thumb1">';
     htmlText += '<div class="image">';
-    htmlText += '<a href="shop.html">';
-    htmlText += '<img src="' + item['DealImage'] + '" alt="image" title="image" class="img-fluid">';
+    htmlText += '<a href="shopdetail.html?id=' + item['Id'] + '">';
+    htmlText += '<img src="http://localhost:6868/static/' + item['DealImage'] + '" alt="image" title="image" class="img-fluid">';
     htmlText += '</a>';
     htmlText += '</div>';
     htmlText += '<div class="caption">';
@@ -60,7 +60,7 @@ function get_products_by_type(t, target) {
             $.each(data, function(index, item) {
                 items.push(reder_type_products(item, index));
             });
-            $(target).append(items.join(""));
+            $(target).empty().append(items.join(""));
         }
     });
 }
@@ -69,7 +69,7 @@ function reder_type_products(item, idx) {
     var htmlText = idx < 3 ? '<div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">' : '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">';
     htmlText += idx < 3 ? '<div class="product-thumb">' : '<div class="product-thumb1">';
     htmlText += '<div class="image">';
-    htmlText += '<a href="shop.html">';
+    htmlText += '<a href="shopdetail.html?id=' + item['Id'] + '">';
     htmlText += "<img src='http://localhost:6868/static/" + (idx < 3 ? item['Image'] : item['DealImage']) + "' alt='image' title='image' class='img-fluid'>";
     htmlText += '</a>';
     if (idx < 3) {
@@ -83,12 +83,12 @@ function reder_type_products(item, idx) {
     }
     htmlText += '</div>';
     htmlText += idx < 3 ? '<div class="caption text-center">' : '<div class="caption">';
-    htmlText += idx < 3 ? '<h4><a href="shop.html">' + item['Name'] + '</a></h4>' : '<h4>' + item['Name'] + '</h4>';
+    htmlText += idx < 3 ? '<h4><a href="shopdetail.html?id=' + item['Id'] + '">' + item['Name'] + '</a></h4>' : '<h4>' + item['Name'] + '</h4>';
     
     if (idx < 3) {
         htmlText += '<div class="rating">';
         for (var i = 0; i < 5; i++) {
-            htmlText += (i == item['Vote']) ? "<i class='fa fa-star-o'></i>" : "<i class='fa fa-star'></i>";
+            htmlText += ((i + 1) == item['Vote']) ? "<i class='fa fa-star-o'></i>" : "<i class='fa fa-star'></i>";
         }
         htmlText += '</div>';
 
@@ -117,7 +117,7 @@ function get_latest_products() {
             $.each(data, function(index, item) {
                 items.push(reder_latest_products(item));
             });
-            $("#lastest_products").append(items.join(""));
+            $("#lastest_products").empty().append(items.join(""));
         }
     });
 }
@@ -127,7 +127,7 @@ function reder_latest_products(item) {
     var htmlText = "<div class='col-md-3 col-lg-3 col-sm-4 col-xs-12'>";
     htmlText += "<div class='product-thumb'>";
     htmlText += "<div class='image'>";
-    htmlText += "<a href='shop.html'>";
+    htmlText += '<a href="shopdetail.html?id=' + item['Id'] + '">';
     htmlText += "<img src='http://localhost:6868/static/" + item['Image'] + "' alt='image' title='image' class='img-fluid'>";
     htmlText += "</a>";
     htmlText += "<div class='onhover1'><div class='button-group'>";
@@ -135,10 +135,11 @@ function reder_latest_products(item) {
     htmlText += "<button class='icons' type='button'><i class='icon_cart_alt'></i></button>";
     htmlText += "<button class='btn-icon' type='button'><i class='icon_heart_alt'></i></button></div></div></div>";
     htmlText += "<div class='caption text-center'>";
-    htmlText += "<h4><a href='shop.html'>" + item['Name'] + "</a></h4>";
+    htmlText += '<a href="shopdetail.html?id=' + item['Id'] + '">';
+    htmlText += '<h4><a href="shopdetail.html?id='  + item['Id'] + '">' + item['Name'] + '</a></h4>';
     htmlText += "<div class='rating'>";
     for (var i = 0; i < 5; i++) {
-        htmlText += (i == item['Vote']) ? "<i class='fa fa-star-o'></i>" : "<i class='fa fa-star'></i>";
+        htmlText += ((i + 1) == item['Vote']) ? "<i class='fa fa-star-o'></i>" : "<i class='fa fa-star'></i>";
     }
     htmlText += "</div>";
     htmlText += (item['OldPrice']) && (item['OldPrice'] > 0) ? "<p class='price'><span>$" + item['OldPrice'] + "</span> $" : "<p class='price'>$";
