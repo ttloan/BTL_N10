@@ -69,8 +69,8 @@ function reder_products(item) {
     var htmlText = '<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">';
     htmlText += '<div class="product-thumb">';
     htmlText += '<div class="image">';
-    htmlText += '<a class="rec-fill front front--slide-left" href="shopdetail.html"><img src="http://localhost:6868/static/' + item['BigImage1'] + '" alt="image" title="image" class="img-fluid" /></a>';
-    htmlText += '<a class="rec-fill back back--slide-left" href="shopdetail.html"><img src="http://localhost:6868/static/' + item['BigImage2'] + '" alt="image" title="image" class="img-fluid" /></a>';
+    htmlText += '<a class="rec-fill front front--slide-left" href="shopdetail.html?id=' + item['Id'] + '"><img src="http://localhost:6868/static/' + item['BigImage1'] + '" alt="image" title="image" class="img-fluid" /></a>';
+    htmlText += '<a class="rec-fill back back--slide-left" href="shopdetail.html?id=' + item['Id'] + '"><img src="http://localhost:6868/static/' + item['BigImage2'] + '" alt="image" title="image" class="img-fluid" /></a>';
     if (item['BestSell'] == 1) {
         htmlText += '<div class="sale"><p>Sale</p></div>';
     }
