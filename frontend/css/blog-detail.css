@@ -11,6 +11,9 @@ a:focus{
 .btn-link:hover, .btn-link:focus {
     text-decoration: none;
 }
+a{
+    text-decoration: none;
+}
 .list-inline > li {
     display: inline-block;
 }
@@ -68,6 +71,23 @@ a:focus{
 /*--------------------
 [ top / top ]
 ---------------------*/
+.float-left {
+    float: left!important;
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.list-inline > li {
+    display: inline-block;
+}
+
+.float-right {
+    float: right!important;
+}
 .top{
 	background:#17161f;
 }
@@ -254,6 +274,9 @@ a:focus{
 	line-height: 16px;
 	text-transform:uppercase;
 	background:#FF9900;
+}
+.dropdown{
+    position: relative;
 }
 /*--------------------
 [ Header / header ]
